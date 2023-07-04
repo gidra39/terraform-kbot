@@ -13,7 +13,7 @@ variable "GOOGLE_PROJECT" {
 variable "GKE_NUM_NODES" {
   description = "The number of nodes in the GKE cluster"
   type        = number
-  default     = 1
+  default     = 2
 }
 
 variable "GKE_MACHINE_TYPE" {
@@ -21,3 +21,28 @@ variable "GKE_MACHINE_TYPE" {
   default     = "e2-small"
   description = "Machine type"
 }
+
+variable "GITHUB_OWNER" {
+  type        = string
+  default     = "gidra39"
+  description = "Owner's github account"
+}
+
+variable "GITHUB_TOKEN" {
+  type        = string
+  description = "Github token"
+  sensitive   = true 
+}
+
+variable "FLUX_GITHUB_REPO" {
+  type        = string
+  default     = "kbot-flux"
+  description = "Repo sync with flux"
+}
+
+variable "KIND_CLUSTER_NAME" {
+  type        = string
+  default     = "kbot-kind-cluster"
+  description = "Kind cluster name"
+}
+
